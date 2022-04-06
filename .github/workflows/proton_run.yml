@@ -47,7 +47,6 @@ jobs:
       run: |
         echo ${GITHUB_WORKSPACE}
 
-
     - name: Verify env_config updated
       run: |
         if grep -q REPLACE_ME env_config.json; then
@@ -129,12 +128,18 @@ jobs:
         if [[ $(jq -r --arg env $environment_name 'has($env)' env_config.json) = "true" ]]; then
           role_arn=$(jq -r --arg env $environment_name '.[$env]["role"]' env_config.json)
           target_region=$(jq -r --arg env $environment_name '.[$env]["region"]' env_config.json)
-          state_bucket=$(jq -r --arg env $environment_name '.[$env]["state_bucket"]' env_config.json)   
+          state_bucket=$(jq -r --arg env $environment_name '.[$env]["state_bucket"]' env_config.json)
+          echo $$environment_name
+          echo $role_arn
+          echo $state_bucket
         else     
           if [[ $(jq -r --arg env $environment_name 'has("*")' env_config.json) = "true" ]]; then
             role_arn=$(jq -r --arg env $environment_name '.["*"]["role"]' env_config.json)
             target_region=$(jq -r --arg env $environment_name '.["*"]["region"]' env_config.json)
             state_bucket=$(jq -r --arg env $environment_name '.["*"]["state_bucket"]' env_config.json)
+            echo $$environment_name
+            echo $role_arn
+            echo $state_bucket
           else
             echo "Missing $environment_name or * from env_config.json, exiting"
             exit 1
