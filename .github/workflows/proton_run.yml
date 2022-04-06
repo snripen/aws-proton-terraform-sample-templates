@@ -45,6 +45,7 @@ jobs:
 
     - name: Verify env_config updated
       run: |
+        pwd
         if grep -q REPLACE_ME env_config.json; then
           echo "You must update env_config.json or update this workflow to not require it."
           exit 1
