@@ -255,6 +255,7 @@ jobs:
       run: |
         # Get outputs as json
         outputs_json=$(terraform output -json)
+        echo $outputs_json
 
         # The outputs parameters expects a list of key=keyName,valueString=value key=key2Name,valueString=value2 etc...
         # So here we convert the output json into a shell array
