@@ -1,0 +1,7 @@
+{
+    "Staging1": {
+        "role": "arn:aws:iam::12345478910:role/ExampleGithubRole",
+        "region": "us-east-1",
+        "state_bucket":"aws-proton-terraform-bucket-12345478910"
+    }
+}
