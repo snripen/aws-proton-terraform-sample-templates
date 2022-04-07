@@ -264,8 +264,7 @@ jobs:
         formatted_outputs=( $(echo $outputs_json | jq -r "to_entries|map(\"key=\(.key),valueString=\(.value.value|tostring)\")|.[]") )
         
         # Notify proton
-        aws proton notify-resource-deployment-status-change --region us-east-1 --resource-arn arn:aws:proton:us-east-1:***:environment/sample-vpc-environment-template --status SUCCEEDED --deployment-id b0777317-629a-4517-926d-59b0bc9f2926 --outputs key=security_group_id,valueString=sg-00bd47009c8d7f524 key=subnet_id,valueString=subnet-0dbb1eb78c0ada8b9 key=vpc_arn,valueString=arn:aws:ec2:us-east-1:***:vpc\/vpc-029f362a11ac62575
-        # aws proton notify-resource-deployment-status-change --region ${{ needs.get-deployment-data.outputs.proton_region }} --resource-arn ${{ needs.get-deployment-data.outputs.resource_arn }} --status SUCCEEDED --deployment-id ${{ needs.get-deployment-data.outputs.deployment_id }} --outputs "${formatted_outputs[*]}"
+        aws proton notify-resource-deployment-status-change --region ${{ needs.get-deployment-data.outputs.proton_region }} --resource-arn ${{ needs.get-deployment-data.outputs.resource_arn }} --status SUCCEEDED --deployment-id ${{ needs.get-deployment-data.outputs.deployment_id }} --outputs "${formatted_outputs[*]}"
         echo "Notify success!"   
         
     - name: Notify Proton Failure
