@@ -27,6 +27,7 @@ module "vpc" {
   tags = {
     Terraform   = "true"
     Environment = var.environment.name
+    Provisioning= "via-proton"
   }
 }
 
