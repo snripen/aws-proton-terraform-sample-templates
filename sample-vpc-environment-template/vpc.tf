@@ -22,7 +22,7 @@ module "vpc" {
   assign_ipv6_address_on_creation                = true
   private_subnet_assign_ipv6_address_on_creation = false
   public_subnet_ipv6_prefixes                    = [0]
-  private_subnet_ipv6_prefixes                   = [2]
+  private_subnet_ipv6_prefixes                   = [1]
 
   tags = {
     Terraform   = "true"
