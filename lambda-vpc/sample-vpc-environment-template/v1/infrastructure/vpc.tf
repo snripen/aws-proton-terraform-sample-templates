@@ -13,9 +13,8 @@ module "vpc" {
   enable_ipv6                                    = true
   assign_ipv6_address_on_creation                = true
   private_subnet_assign_ipv6_address_on_creation = false
-
-  public_subnet_ipv6_prefixes   = [0, 1]
-  private_subnet_ipv6_prefixes  = [2, 3]
+  public_subnet_ipv6_prefixes                    = [0, 1]
+  private_subnet_ipv6_prefixes                   = [2, 3]
 
   tags = {
     Terraform   = "true"
