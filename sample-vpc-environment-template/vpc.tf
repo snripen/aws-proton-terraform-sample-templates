@@ -19,9 +19,17 @@ module "vpc" {
   enable_nat_gateway = true
   enable_vpn_gateway = true
 
+  enable_ipv6                     = true
+  assign_ipv6_address_on_creation = true
+
+  private_subnet_assign_ipv6_address_on_creation = false
+
+  public_subnet_ipv6_prefixes   = [0, 1]
+  private_subnet_ipv6_prefixes  = [2, 3]
+  database_subnet_ipv6_prefixes = [4, 5]
+  
   tags = {
     Terraform   = "true"
     Environment = var.environment.name
   }
 }
-
