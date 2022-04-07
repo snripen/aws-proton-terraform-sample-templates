@@ -8,12 +8,10 @@ module "vpc" {
   private_subnets = ["10.0.1.0/24"]
   public_subnets  = ["10.0.101.0/24"]
 
-  enable_nat_gateway = true
-  enable_vpn_gateway = true
-  
-  enable_ipv6                     = true
-  assign_ipv6_address_on_creation = true
-
+  enable_nat_gateway                             = true
+  enable_vpn_gateway                             = true
+  enable_ipv6                                    = true
+  assign_ipv6_address_on_creation                = true
   private_subnet_assign_ipv6_address_on_creation = false
 
   public_subnet_ipv6_prefixes   = [0, 1]
