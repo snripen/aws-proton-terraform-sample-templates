@@ -25,8 +25,10 @@ module "vpc" {
   private_subnet_ipv6_prefixes                   = [1]
 
   tags = {
-    Terraform   = "true"
-    Environment = var.environment.name
+    Terraform    = "true"
+    Environment  = var.environment.name
+    Provisioning = "via-proton"
+    Owner        = "Anshu"
   }
 }
 
