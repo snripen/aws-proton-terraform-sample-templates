@@ -5,3 +5,4 @@ This directory contains two sample templates authored using Terraform. One templ
 If you need help deploying this, head to [aws-samples/aws-proton-terraform-github-actions-sample](https://github.com/aws-samples/aws-proton-terraform-github-actions-sample) where we provide a walkthrough for running Self-managed provisioning options for executing Terraform through AWS Proton.
 
 
+ 
