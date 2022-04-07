@@ -81,6 +81,7 @@ jobs:
       run: |
         modified_resource_arn=$(jq -r '.resourceMetadata.arn' ${{ steps.find-modified.outputs.deployment-metadata-path }})
         echo "::set-output name=resource_arn::$modified_resource_arn"
+        echo $modified_resource_arn
         
         IFS=':'
         read -a split_arn <<< "$modified_resource_arn"
@@ -138,7 +139,6 @@ jobs:
         
         echo "::set-output name=working_directory::$working_directory"
         echo "::set-output name=environment::$environment_name"
-        
         echo "::set-output name=role_arn::$role_arn"
         echo "::set-output name=target_region::$target_region"
         echo "::set-output name=state_bucket::$state_bucket"
