@@ -17,11 +17,11 @@ module "vpc" {
   public_subnets  = ["10.0.101.0/24"]
 
   enable_nat_gateway = true
-  enable_vpn_gateway = true
-
+  enable_vpn_gateway = false
+  
+  
   tags = {
     Terraform   = "true"
     Environment = var.environment.name
   }
 }
-
