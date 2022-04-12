@@ -4,7 +4,7 @@
         "region": "us-east-1",
         "state_bucket":"aws-proton-terraform-bucket-127511872893"
     },
-    "sample-lambda-service-template": {
+    "sample-lambda-function-template": {
         "role": "arn:aws:iam::127511872893:role/ExampleGithubRole",
         "region": "us-east-1",
         "state_bucket":"aws-proton-terraform-bucket-127511872893"
