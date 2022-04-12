@@ -38,4 +38,5 @@ resource "aws_lambda_function" "lambda_service" {
 #     subnet_ids         = [var.environment.outputs.subnet_id]
 #     security_group_ids = [var.environment.outputs.security_group_id]
 #   }
+  
 }
