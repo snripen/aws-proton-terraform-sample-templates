@@ -269,7 +269,7 @@ jobs:
         echo "Notify success!"   
         
     - name: Notify Proton Failure
-      if: needs.terraform.outputs.success != 'True' || steps.tf_init.outcome != 'success'
+      if: needs.terraform.outputs.success != 'True' || steps.tf_init.outcome != 'success' || steps.tf_fmt.outcome != 'success'
       run: |
         aws proton notify-resource-deployment-status-change --region ${{ needs.get-deployment-data.outputs.proton_region }} --resource-arn ${{ needs.get-deployment-data.outputs.resource_arn }} --status FAILED --deployment-id ${{ needs.get-deployment-data.outputs.deployment_id }}
         echo "Notify failure!"
@@ -281,7 +281,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ needs.get-deployment-data.outputs.environment }}
 
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.get-deployment-data.outputs.is_deleted == 'true'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.get-deployment-data.outputs.is_deleted == 'true' || steps.tf_fmt.outcome != 'success'
     
     permissions:
       id-token: write
