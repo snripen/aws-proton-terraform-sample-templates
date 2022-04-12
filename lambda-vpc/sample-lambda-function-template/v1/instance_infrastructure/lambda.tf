@@ -34,8 +34,8 @@ resource "aws_lambda_function" "lambda_service" {
   runtime           = "nodejs6.10"
   handler           = "index.handler"
 
-  vpc_config {
-    subnet_ids         = [var.environment.outputs.subnet_id]
-    security_group_ids = [var.environment.outputs.security_group_id]
-  }
+#   vpc_config {
+#     subnet_ids         = [var.environment.outputs.subnet_id]
+#     security_group_ids = [var.environment.outputs.security_group_id]
+#   }
 }
