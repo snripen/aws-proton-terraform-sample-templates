@@ -33,10 +33,4 @@ resource "aws_lambda_function" "lambda_service" {
   source_code_hash  = "${data.archive_file.lambda_zip.output_base64sha256}"
   runtime           = "nodejs6.10"
   handler           = "index.handler"
-
-#   vpc_config {
-#     subnet_ids         = [var.environment.outputs.subnet_id]
-#     security_group_ids = [var.environment.outputs.security_group_id]
-#   }
-  
 }
