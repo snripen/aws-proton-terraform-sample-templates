@@ -1,3 +1,5 @@
+[![proton-run](https://github.com/warpspeed6/aws-proton-terraform-sample-templates/actions/workflows/proton_run.yml/badge.svg)](https://github.com/warpspeed6/aws-proton-terraform-sample-templates/actions/workflows/proton_run.yml)
+
 ## AWS Proton Sample Terraform Templates
 
 This repository is a curated list of samplex2 templates to use within AWS Proton that are authored for integration with [Terraform](https://www.terraform.io/).
@@ -13,15 +15,6 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
- 
- 
- 
- 
-   
-  
-        
-        
-        
         
          
          
