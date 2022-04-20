@@ -20,7 +20,7 @@ module "vpc" {
     Terraform    = "true"
     Environment  = var.environment.name
     Provisioning = "via-proton"
-    Owner        = "EEM-TFC"
+    Owner        = "Demo-EEM-TFC"
   }
 }
 
